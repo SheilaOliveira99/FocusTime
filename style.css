@@ -6,11 +6,11 @@
 
 :root {
   --hue: 194;
-  --bg-color:hsla(var(--hue), 5%, 7%);
-  --text-color: hsla(var(--hue), 40%, 98%, 1);
-  --primary-clor:hsla(var(--hue), 100%, 63%);
-  --controls-bg-color:hsla(var(--hue), 0%, 14%);
-  --button-secondary: hsla(var(--hue), 40%, 98%, 1);
+  --bg-color: hsl(var(--hue), 5%, 7%);
+  --text-color: hsl(var(--hue), 40%, 98%);
+  --primary-color: hsl(var(--hue), 100%, 63%);
+  --controls-bg-color: hsl(var(--hue), 0%, 14%);
+  --button-secondary: hsl(var(--hue), 40%, 98%);
 /*faz com que o crescimento das letras, sejam baseadas na largura da tela.*/
   font-size: clamp(40%, 1% + 2vw, 62.5%); 
 }
@@ -39,71 +39,66 @@ html:not(.light) .ph-moon {
   na pág, mas só o sr-only irá conseguir ler*/
   width: 1px;
   height: 1px;
-
   position: absolute;
   overflow: hidden;
   margin: -1px;
-  padding: 0;
+  padding: 0px;
   border: 0;
   appearance: none;
-
 }
 
 body {
-background-color: var(--bg-color);
-color: var(--text-color);
-
-display: grid;
-height: 100vh;
-place-content: center;
-}
-
-#app {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  
   display: grid;
-  justify-items: center;
-}
-
-.flex {
-  display: flex;
-}
-
-#timer {
-  font-size: 9.6rem;
-  font-weight: bold;
-  font-family: sans-serif;
-
-  justify-content: center;
-}
-
-#controls {
-  margin-top: 1.6rem;
-  padding: 2.2rem 4rem;
-  gap: 1.6rem;
-  background-color: var(--controls-bg-color);
-  border-radius: 999rem;
-}
-
-button {
-  background-color: transparent;
-  border: 0;
-  color: var(--primary-clor);
-  cursor: pointer; /*ve a mãozinha do mouse*/
-  font-size: 6.4rem;
-}
+  height: 100vh;
+  place-content: center;
+  }
+  
+  #app {
+      display: grid;
+      justify-items: center;
+  }
+  
+  .flex {
+      display: flex;
+  }
+  
+  #timer {
+      font-size: 9.6rem;
+      font-weight: bold;
+      font-family: sans-serif;
+  }
+  
+  #controls {
+      margin-top: 1.6rem;
+      padding: 2.2rem 4rem;
+      gap: 1.6rem;
+      background-color: var(--controls-bg-color);
+      border-radius: 999rem;
+  }
+  
+  button {
+      background-color: transparent;
+      border: 0;
+      color: var(--primary-color);
+      cursor: pointer; /*ve a mãozinha do mouse*/
+      font-size: 6.4rem;
+  }
 
 .secondary {
   color: var(--button-secondary);
-
 }
+
 /*Controls*/
 .running .ph-play-circle,
 .running .ph-timer,
 .music-on .ph-speaker-none,/*qundo a musica estiver tocando, o speaker-none irá desaparecer*/
 /*funão do JS, como se fosse obs e dizer no HTML NÃO TEM A CLASSE RUNNING,
  ENTÃO DESAPARECE COM AS OUTRAS CLASSES*/
-html:not(.running) .ph-pause-circle,
-html:not(.running) .ph-stop-circle,
-html:not(.musica-on) .ph-speaker-high
-{
-  display: none;
-}
+ html:not(.running) .ph-pause-circle,
+ html:not(.running) .ph-stop-circle,
+ html:not(.music-on) .ph-speaker-high {
+     display: none;
+ }
