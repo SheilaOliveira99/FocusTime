@@ -4,6 +4,9 @@ import * as reset from './actions.js'
 import { kitchenTimer } from './sounds.js';
 
 export function countdown() {
+  clearTimeout(state.countdownId)
+
+
   if(!state.isRunning) {
       return; //Senão estiver rodando, a contagem é parada.
   }
@@ -30,8 +33,7 @@ if (minutes < 0) {
   //"setTimeout"Executa uma função, depois de deeterminado tempo (milisegundos)
   //Uma recurssão = quando uma função chama ela mesma, só que ela precisa ser PARADA em algum momento 
   //função chama ela de volta callbackfunction.
-  setTimeout(countdown, 1000);
-  
+  state.countdownId = setTimeout(() => countdown(), 1000)  
   //vai fazer com que rode a função, até clicar no botão pause.
 }
 
